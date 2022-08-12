@@ -1,0 +1,64 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+
+ .custom_user_addressfield--wrapper input.custom_user_addressfield--text{
+     display: block;
+     width: 100%;
+     margin-bottom: 20px;
+ }
+
+
+.custom_user_ratingsfield--text{
+    width: 150px !important;
+  }
+
+ .custom-user-admin-page{
+     display: flex;
+     flex-direction: column;
+     padding-right:50px ;
+ }
+ .custom-user-admin-page .custom-user-admin-page__skill--text{
+     max-width: 500px;
+     width: 100%;
+     margin-bottom: 50px;
+ }
+
+ .custom-user-admin-page .custom-user-admin-page__email--text{
+    padding: 5px 10px;
+ }
+
+ .custom_user_field--wrapper{
+    border-bottom: 1px solid rgb(212, 212, 212);
+    padding: 20px 0;
+ }
+ .custom_user_field--wrapper .custom_user_addressfield--text{
+     margin: 10px 0;
+ }
+ 
+ .custom_user_field--wrapper input {
+     width: 100%;
+ }
+
+ .custom_user_field--wrapper .custom_meta_notes{
+    display: block;
+    font-size: 16px;
+    color: #000;
+    margin: 10px 0;
+}
+
+.select2-container{
+    width: 100% !important;
+    margin-bottom: 20px !important;
+    display: block;
+  }
+  
+  .custom_user_skill{
+    font-size: 16px;
+  }
+  
+.cust-user-single__details--list li p{
+    display: inline-block;
+}
