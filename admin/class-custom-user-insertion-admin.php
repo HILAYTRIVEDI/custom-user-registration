@@ -270,13 +270,21 @@ if( !class_exists('Custom_User_Insertion_Admin') ){
 			//Adding general setting section
 			add_settings_section(
 				'custom_user_skills',
-				'Custom User Skills',
+				'Form Settings',
 				array($this,'custom_user_skills_callback'),
 				'custom_user_skills'
 			);
 
 			register_setting('custom_user_skills', 'custom-user-admin-page__skill--list');
 			register_setting('custom_user_skills', 'custom-user-admin-page__email');
+			register_setting('custom_user_skills', 'custom-user-admin-page__switch--checkbox');
+            register_setting('custom_user_skills', 'custom-user-admin-page__lastname-switch--checkbox');
+            register_setting('custom_user_skills', 'custom-user-admin-page__primary-address-switch--checkbox');
+            register_setting('custom_user_skills', 'custom-user-admin-page__secondary-address-switch--checkbox');
+            register_setting('custom_user_skills', 'custom-user-admin-page__postal-code-switch--checkbox');
+            register_setting('custom_user_skills', 'custom-user-admin-page__dob-switch--checkbox');
+            register_setting('custom_user_skills', 'custom-user-admin-page__hobbies-switch--checkbox');
+ 			register_setting('custom_user_skills', 'custom-user-admin-page__skills-setting-switch--checkbox');
 
 			if(empty(get_option( "custom-user-admin-page__email" ))){
 				$current_user = wp_get_current_user();
