@@ -26,4 +26,18 @@
 			}
 		}
 	);
+
+	$(document).ready(function(){
+		$(".nav-tabs li.active").click(); 
+		
+		$(".nav-tabs li").click(function(e){
+		e.preventDefault();
+			$(".nav-tabs li").removeClass('active');
+			$(this).addClass('active');
+		let tid=  $(this).find('a').attr('href');
+			console.log("ID:"+tid);
+			$('.tab-pane').removeClass('active in');
+			$(tid).addClass('active in');
+		});
+	});
 })( jQuery );
