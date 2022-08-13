@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The file that defines the core plugin class
  *
@@ -154,24 +153,22 @@ class Custom_User_Insertion {
 
 		$plugin_admin = new Custom_User_Insertion_Admin( $this->get_plugin_name(), $this->get_version() );
 
-		// Actions
+		// Actions.
 		$this->loader->add_action( 'init', $plugin_admin, 'custom_posts' );
 		$this->loader->add_action( 'init', $plugin_admin, 'custom_taxonomy' );
 		$this->loader->add_action( 'init', $plugin_admin, 'custom_user_approval_status' );
-		$this->loader->add_action( 'admin_init', $plugin_admin, 'custom_user_skills');
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'custom_user_skills' );
 		$this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'custom_metabox' );
 		$this->loader->add_action( 'save_post', $plugin_admin, 'custom_meta_box_saver' );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'custom_user_admin_menu' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-		$this->loader->add_action( 'manage_custom_user_posts_custom_column', $plugin_admin, 'adding_custom_user_posts_columns_data', 10, 2);
-		
+		$this->loader->add_action( 'manage_custom_user_posts_custom_column', $plugin_admin, 'adding_custom_user_posts_columns_data', 10, 2 );
 
-		// Filters
-		$this->loader->add_filter( 'authenticate', $plugin_admin, 'check_validation_status', 20,3);
-		$this->loader->add_filter( 'manage_custom_user_posts_columns', $plugin_admin, 'manage_custom_user_posts_columns');
-		$this->loader->add_filter( 'single_template', $plugin_admin, 'my_custom_single_template');
-
+		// Filters.
+		$this->loader->add_filter( 'authenticate', $plugin_admin, 'check_validation_status', 20, 3 );
+		$this->loader->add_filter( 'manage_custom_user_posts_columns', $plugin_admin, 'manage_custom_user_posts_columns' );
+		$this->loader->add_filter( 'single_template', $plugin_admin, 'my_custom_single_template' );
 
 	}
 
@@ -185,19 +182,20 @@ class Custom_User_Insertion {
 	private function define_public_hooks() {
 
 		$plugin_public = new Custom_User_Insertion_Public( $this->get_plugin_name(), $this->get_version() );
-		
+
+		// Actions.
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-		$this->loader->add_action( 'wp_ajax_custom_search_listing_data', $plugin_public,'custom_search_listing_data_callback');
-		$this->loader->add_action( 'wp_ajax_custom_user_insertion_form', $plugin_public,'custom_user_insertion_form_callback');
+		$this->loader->add_action( 'wp_ajax_custom_search_listing_data', $plugin_public, 'custom_search_listing_data_callback' );
+		$this->loader->add_action( 'wp_ajax_custom_user_insertion_form', $plugin_public, 'custom_user_insertion_form_callback' );
 		$this->loader->add_action( 'wp_ajax_nopriv_custom_user_insertion_form', $plugin_public, 'custom_user_insertion_form_callback' );
-		$this->loader->add_action( 'wp_ajax_custom_user_login_verification', $plugin_public,'custom_user_login_verification_callback');
-		$this->loader->add_action( 'wp_ajax_custom_username_data_verification', $plugin_public,'custom_username_data_verification_callback');
+		$this->loader->add_action( 'wp_ajax_custom_user_login_verification', $plugin_public, 'custom_user_login_verification_callback' );
+		$this->loader->add_action( 'wp_ajax_custom_username_data_verification', $plugin_public, 'custom_username_data_verification_callback' );
 		$this->loader->add_action( 'wp_ajax_nopriv_custom_username_data_verification', $plugin_public, 'custom_username_data_verification_callback' );
-		$this->loader->add_action( 'wp_ajax_custom_email_data_verification', $plugin_public,'custom_email_data_verification_callback');
+		$this->loader->add_action( 'wp_ajax_custom_email_data_verification', $plugin_public, 'custom_email_data_verification_callback' );
 		$this->loader->add_action( 'wp_ajax_nopriv_custom_email_data_verification', $plugin_public, 'custom_email_data_verification_callback' );
-		
-		// Filters
+
+		// Filters.
 		$this->loader->add_filter( 'wp_dropdown_cats', $plugin_public, 'wp_dropdown_cats_multiple', 10, 2 );
 
 	}

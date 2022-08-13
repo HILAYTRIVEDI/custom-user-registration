@@ -11,7 +11,7 @@
 }
 
 .custom-user-registration-form-container.loading::after {
-  
+
   position: absolute;
   content: "Please Wait...";
   display: flex;
@@ -77,11 +77,11 @@
   .custom-user-tool__search--wrapper
   .custom-user-tool__search--field
   select {
-    width: 100%;
-    margin-top: 10px;
-    padding: 5px 10px;
-    color: #000;
-    font-size: 18px;
+	width: 100%;
+	margin-top: 10px;
+	padding: 5px 10px;
+	color: #000;
+	font-size: 18px;
 }
 .custom-user-tool__container
   .custom-user-tool__search--wrapper
@@ -100,8 +100,8 @@
 .custom-user-tool__container
   .custom-user-tool__search--wrapper
   .custom-user-tool__search--submit:hover{
-    background-color: #0055bc;
-    cursor: pointer;
+	background-color: #0055bc;
+	cursor: pointer;
   }
 
 .custom-user-tool__container .custom-user-tool__list {
@@ -135,15 +135,15 @@
   .custom-user-tool__list
   .custom-user-tool__list--wrapper
   .custom-user-tool__list--item img{
-    height: 300px;
-    object-fit: cover;
+	height: 300px;
+	object-fit: cover;
   }
 
 .custom-user-tool__container
   .custom-user-tool__list
   .custom-user-tool__list--wrapper
   .custom-user-tool__list--item .custom-user__avatar{
-    max-width: 100%;
+	max-width: 100%;
   }
 
 .custom-user-tool__container
@@ -183,42 +183,42 @@
   .custom-user-tool__list
   .custom-user-tool__list--wrapper
   .custom-user-tool__list--item .custom-user__skills ul{
-    margin-left: 20px;
+	margin-left: 20px;
 }
 
 .custom-user-tool__container
   .custom-user-tool__list
   .custom-user-tool__list--wrapper
   .custom-user-tool__list--item .custom-user__ratings{
-    display: flex;
-    max-width: 100%;
-    margin-bottom: 10px;
+	display: flex;
+	max-width: 100%;
+	margin-bottom: 10px;
   }
 
   .custom-user-tool__container
   .custom-user-tool__list
   .custom-user-tool__list--wrapper
   .custom-user-tool__list--item .custom-user__ratings p{
-    color: #000;
-    display: block;
-    margin-right: 10px;
+	color: #000;
+	display: block;
+	margin-right: 10px;
   }
 
 .custom-user-tool__container
   .custom-user-tool__list
   .custom-user-tool__list--wrapper
   .custom-user-tool__list--item .custom-user__ratings span{
-    color: rgb(220, 220, 119);
-    font-size: 18px;
+	color: rgb(220, 220, 119);
+	font-size: 18px;
   }
 
   .custom-user-tool__container
   .custom-user-tool__list
   .custom-user-tool__list--wrapper
   .custom-user-tool__list--link{
-    display: block;
-    text-decoration: none !important;
-    color: #000;
+	display: block;
+	text-decoration: none !important;
+	color: #000;
   }
 
 #contact #date_of_birth {
@@ -347,27 +347,27 @@
 
 @media screen and (max-width: 1024px) {
   .custom-user-tool__container
-    .custom-user-tool__list
-    .custom-user-tool__list--wrapper {
-    grid-template-columns: repeat(2, 50%);
+	.custom-user-tool__list
+	.custom-user-tool__list--wrapper {
+	grid-template-columns: repeat(2, 50%);
   }
   .custom-user-tool__search--dob-wrapper{
-    flex-direction: column;
-    align-items:flex-start;
+	flex-direction: column;
+	align-items:flex-start;
   }
-  
+
   .custom-user-tool__search--dob-wrapper span {
-    margin-left: 0;
+	margin-left: 0;
   }
 }
 
 @media screen and (max-width: 730px) {
   .custom-user-tool__container .custom-user-tool__search--wrapper {
-    grid-template-columns: 100%;
+	grid-template-columns: 100%;
   }
   .custom-user-login-form .custom-user-login-button-wrapper input{
-    width: 100%;
-    margin: 10px 0px;
+	width: 100%;
+	margin: 10px 0px;
   }
 }
 
@@ -438,9 +438,9 @@
 
 @media screen and (max-width:767px){
   .cust-user-single__wrapper .cust-user-single__banner{
-    justify-content: center;
+	justify-content: center;
   }
   .cust-user-single__wrapper .cust-user-single__details .cust-user-single__details--list{
-    grid-template-columns: 100%;
+	grid-template-columns: 100%;
   }
 }

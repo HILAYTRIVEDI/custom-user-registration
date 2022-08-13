@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Define the internationalization functionality
  *
@@ -25,7 +24,6 @@
  * @author     Hilay Trivedi <hilay.trivedi@multidos.com>
  */
 class Custom_User_Insertion_i18n {
-
 
 	/**
 	 * Load the plugin text domain for translation.

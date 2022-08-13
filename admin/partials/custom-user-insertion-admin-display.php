@@ -1,7 +1,6 @@
 <?php
-
 /**
- * Provide a admin area view for the plugin
+ * Provide a admin area view for the Custom user skill page.
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
@@ -11,19 +10,16 @@
  * @package    Custom_User_Insertion
  * @subpackage Custom_User_Insertion/admin/partials
  */
+
 ?>
 
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
-
 <form method="POST" action="options.php" enctype="multipart/form-data">
+	<?php
 
-    <?php 
+		settings_fields( 'custom_user_skills' );
+		do_settings_sections( 'custom_user_skills' );
 
-        settings_fields('custom_user_skills');
-        do_settings_sections('custom_user_skills');
+		submit_button();
 
-        submit_button(); 
-
-    ?>
-
+	?>
 </form>
