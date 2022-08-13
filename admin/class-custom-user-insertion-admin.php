@@ -13,9 +13,6 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the admin-specific stylesheet and JavaScript.
- *
  * @package    Custom_User_Insertion
  * @subpackage Custom_User_Insertion/admin
  * @author     Hilay Trivedi <hilay.trivedi@multidos.com>
