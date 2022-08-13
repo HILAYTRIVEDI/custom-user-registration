@@ -4,12 +4,19 @@
  *
  * @param  array  $templates  The list of post
  *
- * @return array  $templates  The modified list of post list
+ * @return array  $templates  The modified list of post list.
  *
  * @package    Custom_User_Insertion
  */
 
 get_header();
+
+if ( get_queried_object() ) {
+	$cust_category = get_queried_object();
+	$cust_user_id  = $cust_category->term_id;
+} else {
+	$cust_user_id = '';
+}
 
 ?>
 
@@ -20,11 +27,10 @@ get_header();
 	<?php
 	if ( get_the_content() ) {
 		the_content();
-		echo do_shortcode( '[custom_user_search_tool_form]', true );
+		echo do_shortcode( '[custom_user_search_tool_list category=' . $cust_user_id . ']' );
 	} else {
-		echo do_shortcode( '[custom_user_search_tool_form]', true );
+		echo do_shortcode( '[custom_user_search_tool_list category=' . $cust_user_id . ']' );
 	}
-
 	?>
 </div>
 
