@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The public-facing functionality of the plugin.
  *
@@ -62,7 +61,9 @@ if( !class_exists('Custom_User_Insertion_Public') ){
 		}
 
 		/**
-		 * Converts the simple dropdowns to multiselect dorpdown
+		 * Converts the simple dropdowns to multiselect dorpdown.
+		 * 
+		 * @since    1.0.0
 		 */
 		public function wp_dropdown_cats_multiple( $output, $r ) {
 
@@ -82,6 +83,8 @@ if( !class_exists('Custom_User_Insertion_Public') ){
 
 		/**
 		 * Call back function for Multistepper Registration form
+		 * 
+		 * @since    1.0.0
 		 */
 		
 		public function custom_user_stepper_form_handler(){
@@ -100,11 +103,13 @@ if( !class_exists('Custom_User_Insertion_Public') ){
 		}
 
 		/**
-		 * Ajax callback function for the user registration 
+		 * Ajax callback function for the user registration
+		 * 
+		 * @since    1.0.0
 		 */
 		public function custom_user_insertion_form_callback(){
 
-			if(isset( $_POST['nonce'] ) && !empty( $_POST['nonce'] )){
+			if(isset( $_POST['nonce'] ) && !empty( $_POST['nonce'] )){ //PHPCS:ignore
 				if (!wp_verify_nonce($_POST['nonce'], 'ajax-nonce') ) {
 					die();
 				}
@@ -113,7 +118,7 @@ if( !class_exists('Custom_User_Insertion_Public') ){
 			$name=( isset( $_POST['name'] ) && !empty( $_POST['name'] ) ) ? sanitize_text_field($_POST['name']) :""; 
 			$surname=( isset( $_POST['surname'] ) && !empty( $_POST['surname'] ) ) ? sanitize_text_field($_POST['surname']) :"";
 			$email=( isset( $_POST['email'] ) && !empty( $_POST['email'] ) ) ? sanitize_text_field($_POST['email']) :"";
-			$user_avatar=( isset( $_FILES['userAvatar'] ) && !empty( $_FILES['userAvatar'] ) ) ? $_FILES['userAvatar'] :"";
+			$user_avatar=( isset( $_FILES['userAvatar'] ) && !empty( $_FILES['userAvatar'] ) ) ? $_FILES['userAvatar'] :""; //PHPCS:ignore
 			$address=( isset( $_POST['address'] ) && !empty( $_POST['address'] ) ) ? sanitize_text_field($_POST['address']) :"";
 			$secondary_address=( isset( $_POST['secondary_address'] ) && !empty( $_POST['secondary_address'] ) ) ? sanitize_text_field($_POST['secondary_address']) :"";
 			$date_of_birth=( isset( $_POST['date_of_birth'] ) && !empty( $_POST['date_of_birth'] ) ) ? sanitize_text_field($_POST['date_of_birth']) :"";
@@ -122,7 +127,7 @@ if( !class_exists('Custom_User_Insertion_Public') ){
 			$user_skills = ( isset( $_POST['custom_user_skill'] ) && !empty( $_POST['custom_user_skill'] ) ) ? sanitize_text_field($_POST['custom_user_skill']) :"" ;
 			$custom_user_password=( isset( $_POST['password'] ) && !empty( $_POST['password'] ) ) ? sanitize_text_field($_POST['password']) :"" ;
 
-			if(isset( $_POST['custom_user_cat'] ) && !empty( $_POST['custom_user_cat'] )){
+			if(isset( $_POST['custom_user_cat'] ) && !empty( $_POST['custom_user_cat'] )){ //PHPCS:ignore
 				$custom_user_cat = $_POST['custom_user_cat'];
 				$custom_user_cat = array_pop($custom_user_cat);
 			}
@@ -185,8 +190,6 @@ if( !class_exists('Custom_User_Insertion_Public') ){
 
 				wp_mail( $custom_admin_mail, 'New User Inquiry', $msg );
 				
-				$main_user_ID = get_current_user_id(  );
-
 				$my_cptpost_args = array(
 					'post_title'    => $user_name,
 					'post_author'	=>	'1',
@@ -214,13 +217,15 @@ if( !class_exists('Custom_User_Insertion_Public') ){
 				set_post_thumbnail($cpt_id,$upload_id);
 
 			} else {
-				echo json_encode(array("Success"=> 0));
+				echo wp_json_encode(array("Success"=> 0));
 			}
 			wp_die();
 		}
 
 		/**
 		 * AJAX funciton for the User Name verification 
+		 * 
+		 * @since    1.0.0
 		 */
 		public function custom_username_data_verification_callback(){
 			if(isset( $_POST['nonce'] ) && !empty( $_POST['nonce'] )){
@@ -237,7 +242,9 @@ if( !class_exists('Custom_User_Insertion_Public') ){
 		}
 
 		/**
-		 * AJAX funciton for the verification 
+		 * AJAX funciton for the verification
+		 * 
+		 * @since    1.0.0
 		 */
 		public function custom_email_data_verification_callback(){
 			if(isset( $_POST['nonce'] ) && !empty( $_POST['nonce'] )){
@@ -256,6 +263,8 @@ if( !class_exists('Custom_User_Insertion_Public') ){
 
 		/**
 		 * Call Back function for filter list
+		 * 
+		 * @since    1.0.0
 		 */
 		public function custom_user_search_tool_list_handler( $attr ){
 			$shortcode_args = shortcode_atts( array(
@@ -450,6 +459,8 @@ if( !class_exists('Custom_User_Insertion_Public') ){
 
 		/**
 		 * AJAX function for filter list
+		 * 
+		 * @since    1.0.0
 		 */
 		public function custom_search_listing_data_callback(){
 
