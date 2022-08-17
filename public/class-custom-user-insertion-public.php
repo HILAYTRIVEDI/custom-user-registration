@@ -1,4 +1,4 @@
-<?php
+<?php //PHPCS:ignore
 /**
  * The public-facing functionality of the plugin.
  *
@@ -110,7 +110,7 @@ if( !class_exists('Custom_User_Insertion_Public') ){
 		public function custom_user_insertion_form_callback(){
 
 			if(isset( $_POST['nonce'] ) && !empty( $_POST['nonce'] )){ //PHPCS:ignore
-				if (!wp_verify_nonce($_POST['nonce'], 'ajax-nonce') ) {
+				if (!wp_verify_nonce($_POST['nonce'], 'ajax-nonce') ) { //PHPCS:ignore
 					die();
 				}
 			}
@@ -128,7 +128,7 @@ if( !class_exists('Custom_User_Insertion_Public') ){
 			$custom_user_password=( isset( $_POST['password'] ) && !empty( $_POST['password'] ) ) ? sanitize_text_field($_POST['password']) :"" ;
 
 			if(isset( $_POST['custom_user_cat'] ) && !empty( $_POST['custom_user_cat'] )){ //PHPCS:ignore
-				$custom_user_cat = $_POST['custom_user_cat'];
+				$custom_user_cat = $_POST['custom_user_cat']; //PHPCS:ignore
 				$custom_user_cat = array_pop($custom_user_cat);
 			}
 
